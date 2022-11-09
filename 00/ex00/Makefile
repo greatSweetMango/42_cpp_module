@@ -12,7 +12,7 @@
 
 NAME		= megaphone
 
-CC			= g++
+CC			= clang++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
 
@@ -23,7 +23,7 @@ OBJS		= $(SRCS:.cpp=.o)
 all: $(NAME)
 
 %.o		: %.c
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME)	: $(OBJS)
 			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)

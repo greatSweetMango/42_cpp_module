@@ -12,7 +12,7 @@
 
 NAME		= megaphone
 
-CC			= g++
+CC			= clang++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
