@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:08:20 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/15 20:23:24 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/17 14:04:30 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/17 15:59:32 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
- #define PHONEBOOK_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-#include "Contact.hpp"
+#include <iostream>
+#include <string>
 
-class	Phonebook {
-	private :
-		Contact	_contacts[8];
-		int		_index;
-	public :
-		Phonebook();
-		~Phonebook();
-		void	cmd_add(void);
-		void	cmd_search(void);
-};
+class Weapon {
+	private:
+		std::string _type;
+	public:
+		Weapon(std::string type);
+		~Weapon();
+		/* Getter and Setter */
+		const std::string	&getType(void);
+		void				setType(std::string	type);
+};	
+
 #endif
-//은 커맨드를 입력할 수 있어야 합니다: ADD, SEARCH, EXIT 커맨드를 허용하세요.

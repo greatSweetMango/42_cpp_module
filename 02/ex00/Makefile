@@ -6,27 +6,25 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/15 19:25:58 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/17 19:10:15 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= phonebook
+NAME		= karenFilter
 
 CC			= clang++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
 
-SRCS		= main.cpp			\
-				Contact.cpp		\
-				Phonebook.cpp	\
-				utils.cpp		
-
+SRCS		= main.cpp	\
+				Karen.cpp
+				
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 %.o		: %.c
-			$(CC) $(CFLAGS) -c $< -o $@
+			$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME)	: $(OBJS)
 			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:08:20 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/15 20:23:24 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/16 20:05:29 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/16 20:51:23 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
- #define PHONEBOOK_HPP
+#include "Zombie.hpp"
 
-#include "Contact.hpp"
+Zombie	*newZombie(std::string name);
+void	randomChump(std::string name);
 
-class	Phonebook {
-	private :
-		Contact	_contacts[8];
-		int		_index;
-	public :
-		Phonebook();
-		~Phonebook();
-		void	cmd_add(void);
-		void	cmd_search(void);
-};
-#endif
-//은 커맨드를 입력할 수 있어야 합니다: ADD, SEARCH, EXIT 커맨드를 허용하세요.
+int	main(void)
+{
+	Zombie	*z1 = newZombie("Alfa");
+	Zombie	*z2 = newZombie("Bravo");
+	
+	randomChump("Charlie");
+	randomChump("Delta");
+
+	delete z1;
+	delete z2;
+	return (0);
+}

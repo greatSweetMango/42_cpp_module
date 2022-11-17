@@ -6,20 +6,18 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/15 19:25:58 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/16 13:55:33 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= phonebook
+NAME		= a.out
 
 CC			= clang++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 RM			= rm -rf
 
-SRCS		= main.cpp			\
-				Contact.cpp		\
-				Phonebook.cpp	\
-				utils.cpp		
+SRCS		= tests.cpp	\
+				Account.cpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

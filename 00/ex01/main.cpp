@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:08:20 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/15 20:23:24 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/14 17:36:04 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/16 13:41:02 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
- #define PHONEBOOK_HPP
+#include "Phonebook.hpp"
 
-#include "Contact.hpp"
-
-class	Phonebook {
-	private :
-		Contact	_contacts[8];
-		int		_index;
-	public :
-		Phonebook();
-		~Phonebook();
-		void	cmd_add(void);
-		void	cmd_search(void);
-};
-#endif
-//은 커맨드를 입력할 수 있어야 합니다: ADD, SEARCH, EXIT 커맨드를 허용하세요.
+int	main(void)
+{
+	Phonebook 	pb;
+	std::string	str;
+	
+	while (str != "EXIT")
+	{
+		std::cout << "Enter command > ";
+		std::getline(std::cin, str);
+		if (str == "ADD")
+			pb.cmd_add();
+		else if (str == "SEARCH")
+			pb.cmd_search();
+		if (std::cin.eof())
+		{
+			std::cout << std::endl;
+			return (0);
+		}
+	}
+	return (0);
+}

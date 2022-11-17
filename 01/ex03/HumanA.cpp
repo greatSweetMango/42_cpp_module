@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:08:20 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/15 20:23:24 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/17 14:13:54 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/17 15:59:30 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
- #define PHONEBOOK_HPP
+#include "HumanA.hpp"
+#include <iostream>
 
-#include "Contact.hpp"
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+{
+}
 
-class	Phonebook {
-	private :
-		Contact	_contacts[8];
-		int		_index;
-	public :
-		Phonebook();
-		~Phonebook();
-		void	cmd_add(void);
-		void	cmd_search(void);
-};
-#endif
-//은 커맨드를 입력할 수 있어야 합니다: ADD, SEARCH, EXIT 커맨드를 허용하세요.
+HumanA::~HumanA()
+{
+}
+
+void	HumanA::attack(void)
+{
+	std::cout << this->_name << " attacks with his " \
+			<< this->_weapon.getType() << std::endl;
+}
+
+void	HumanA::setWeapon(Weapon weapon)
+{
+	this->_weapon = weapon;
+}

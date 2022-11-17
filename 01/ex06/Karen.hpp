@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:08:20 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/15 20:23:24 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/17 18:17:59 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/17 18:58:50 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
- #define PHONEBOOK_HPP
+#ifndef KAREN_HPP
+# define KAREN_HPP
 
-#include "Contact.hpp"
+#include <iostream>
 
-class	Phonebook {
-	private :
-		Contact	_contacts[8];
-		int		_index;
-	public :
-		Phonebook();
-		~Phonebook();
-		void	cmd_add(void);
-		void	cmd_search(void);
+class Karen
+{
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		Karen(/* args */);
+		~Karen();
+		void complain(std::string level);
 };
+
 #endif
-//은 커맨드를 입력할 수 있어야 합니다: ADD, SEARCH, EXIT 커맨드를 허용하세요.
