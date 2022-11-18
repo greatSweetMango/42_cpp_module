@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:51:41 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/16 19:00:59 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:12:37 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ bool	Account::makeWithdrawal(int withdrawal )
 		std::cout << "refused" << std::endl;
 		return (false);
 	}
+	std::cout << withdrawal;
 	this->_nbWithdrawals++;
 	this->_totalNbWithdrawals++;
 	this->_amount -= withdrawal;

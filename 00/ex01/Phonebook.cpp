@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 20:08:10 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/15 20:56:11 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/18 21:10:31 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,17 @@ void	Phonebook::cmd_search(void)
 		return ;
 	}
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|" << fix_show_str("Index");;
-	std::cout << "|" << fix_show_str("First name");
-	std::cout << "|" << fix_show_str("Last name");
-	std::cout << "|" << fix_show_str("Nick name");
+	std::cout << "|" << std::setw(10) << "Index";
+	std::cout << "|" << std::setw(10) << "First name";
+	std::cout << "|" << std::setw(10) << "Last name";
+	std::cout << "|" << std::setw(10) << "Nick name";
 	std::cout << "|" << std::endl;
 
 	std::string str;
 	for (int i = 0; i < this->_index && i < 8; i++)
 	{
 		std::cout << "---------------------------------------------" << std::endl;
-		std::cout << "|" << "         " << i + 1;
+		std::cout << "|" << std::setw(10) << i + 1;
 		std::cout << "|" << fix_show_str(this->_contacts[i].get_first_name());
 		std::cout << "|" << fix_show_str(this->_contacts[i].get_last_name());
 		std::cout << "|" << fix_show_str(this->_contacts[i].get_nick_name());

@@ -6,11 +6,11 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/16 13:55:33 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/18 18:37:25 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= a.out
+NAME		= account
 
 CC			= clang++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
