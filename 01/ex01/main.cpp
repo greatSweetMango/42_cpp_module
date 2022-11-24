@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 20:05:29 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/16 21:09:42 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/23 20:04:54 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ int	main(void)
 		zombies[i].announce();
 	}
 	delete [](zombies);
-	std::cout << "end!!" << std::endl;
 }

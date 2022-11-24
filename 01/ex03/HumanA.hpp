@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:11:25 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/17 15:59:28 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:16:12 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include "Weapon.hpp"
 
-class HumanA {
+class HumanA
+{
 	private:
 		std::string	_name;
 		Weapon		&_weapon;
@@ -25,7 +26,7 @@ class HumanA {
 
 		void	attack(void);
 		/* Getter and Setter */
-		void	setWeapon(Weapon weapon);
+		void	setWeapon(Weapon &weapon);
 };
 
 #endif

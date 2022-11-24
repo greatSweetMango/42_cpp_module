@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:10:10 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/18 21:39:27 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/22 20:19:19 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(int const value)
 
 Fixed::Fixed(float const value)
 {
-	this->_value = (int)value << this->_bit;
+	this->_value = roundf(value * (1 << this->_bit));// roundf사용불가??
 }
 
 Fixed::~Fixed(void)
@@ -59,12 +59,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (this->getRawBits() / (1 << this->_bit));
+	return ((float)this->getRawBits() / (float)(1 << this->_bit));
 }
 
 int		Fixed::toInt(void) const
 {
-	return (this->getRawBits() * (1 << this->_bit));
+	return (this->getRawBits() >> this->_bit);
 }
 
 std::ostream	&operator<<(std::ostream &outstream, Fixed const &fixed)

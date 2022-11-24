@@ -6,13 +6,13 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/18 17:27:21 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/24 19:09:15 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= fixed
 
-CC			= clang++
+CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
 
@@ -23,7 +23,7 @@ OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o		: %.c
+%.o		: %.cpp
 			$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME)	: $(OBJS)

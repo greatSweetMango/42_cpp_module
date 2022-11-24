@@ -6,20 +6,20 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/23 20:02:49 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/24 19:10:25 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= weapon
+NAME		= fixed
 
 CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
 
 SRCS		= main.cpp	\
-				HumanA.cpp	\
-				HumanB.cpp	\
-				Weapon.cpp
+				Fixed.cpp	\
+				Point.cpp	\
+				bsp.cpp
 				
 OBJS		= $(SRCS:.cpp=.o)
 

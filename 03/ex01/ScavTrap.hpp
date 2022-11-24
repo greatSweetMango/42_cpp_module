@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:17:57 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/23 22:41:32 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/24 20:50:05 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/24 20:58:23 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "ClapTrap.hpp"
 
-int	main(void)
+class ScavTrap : public ClapTrap
 {
-	Harl Harl;
+	private:
+		
+	public:
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(ScavTrap const &copy);
+		~ScavTrap();
 
-	Harl.complain("DEBUG");
-	Harl.complain("INFO");
-	Harl.complain("WARNING");
-	Harl.complain("ERROR");
-
-	return (0);
-}
+		void	attack(const std::string &target);
+		void	guardGate();
+};

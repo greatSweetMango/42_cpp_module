@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:07:48 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/17 18:15:15 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:40:17 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ int	main(int ac, char **av)
 		return (1);
 	}
 
-	char			buf[BUF_SIZE];
 	std::string		str = "";
 	std::ifstream	infile(av[1]);
 	
@@ -62,13 +61,11 @@ int	main(int ac, char **av)
 		std::cout << "No such file or directory!" << std::endl;
 		return (1);
 	}
-	while (!infile.eof())
-	{
-		memset(buf, 0, BUF_SIZE);
-		infile.read(buf, BUF_SIZE);
-		str.append(buf);
-	}
-
+	infile.seekg(0, std::ios::end);
+	int fsize = infile.tellg();
+	infile.seekg(0, std::ios::beg);
+	
+	str.resize(fsize);
+	infile.read(&str[0], fsize);
 	return (replace(str, av));
-	std::cout << str << std::endl;
 }

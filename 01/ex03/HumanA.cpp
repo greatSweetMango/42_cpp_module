@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:13:54 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/17 15:59:30 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:10:04 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	HumanA::attack(void)
 			<< this->_weapon.getType() << std::endl;
 }
 
-void	HumanA::setWeapon(Weapon weapon)
+void	HumanA::setWeapon(Weapon &weapon)
 {
 	this->_weapon = weapon;
 }

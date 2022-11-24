@@ -6,13 +6,13 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/16 20:32:09 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/23 20:02:27 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= zombie
 
-CC			= clang++
+CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
 
@@ -25,7 +25,7 @@ OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o		: %.c
+%.o		: %.cpp
 			$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME)	: $(OBJS)

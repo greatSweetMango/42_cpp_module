@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 18:17:59 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/17 18:58:50 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/18 18:48:08 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/22 21:29:32 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_HPP
-# define KAREN_HPP
-
+#include "Fixed.hpp"
 #include <iostream>
 
-class Karen
-{
-	private:
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
-	public:
-		Karen(/* args */);
-		~Karen();
-		void complain(std::string level);
-};
+int main( void ) {
+  Fixed a;
+  Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-#endif
+  std::cout << a << "---a" << std::endl;
+  std::cout << ++a << "---a" << std::endl;
+  std::cout << a << "---a" << std::endl;
+  std::cout << a++ << "---a" << std::endl;
+  std::cout << a << "---a" << std::endl;
+
+  std::cout << b << "---b" << std::endl;
+
+  std::cout << Fixed::max( a, b ) << "---max" << std::endl;
+
+  return 0;
+}

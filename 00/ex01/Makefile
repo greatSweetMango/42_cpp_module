@@ -6,7 +6,7 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/15 19:25:58 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/23 18:32:32 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o		: %.c
+%.o		: %.cpp
 			$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME)	: $(OBJS)

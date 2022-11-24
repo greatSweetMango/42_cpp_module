@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:24:05 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/17 16:03:46 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/23 22:11:44 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	HumanB::attack(void)
 			<< this->_weapon->getType() << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon weapon)
+void	HumanB::setWeapon(Weapon &weapon)
 {
 	this->_weapon = &weapon;
 }

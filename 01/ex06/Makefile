@@ -6,24 +6,24 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/11/17 19:10:15 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/11/23 22:44:58 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= karenFilter
+NAME		= harlFilter
 
-CC			= clang++
+CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
 
 SRCS		= main.cpp	\
-				Karen.cpp
+				Harl.cpp
 				
 OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-%.o		: %.c
+%.o		: %.cpp
 			$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(NAME)	: $(OBJS)
