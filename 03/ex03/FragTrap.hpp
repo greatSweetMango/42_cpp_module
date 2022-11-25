@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 14:13:54 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 17:06:11 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/24 20:50:05 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/25 15:00:33 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include <iostream>
+#include "ClapTrap.hpp"
 
-HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+class FragTrap : public ClapTrap
 {
-}
+	private:
+		
+	public:
+		FragTrap();
+		FragTrap(std::string name);
+		FragTrap(FragTrap const &copy);
+		~FragTrap();
 
-HumanA::~HumanA()
-{
-}
-
-void	HumanA::attack(void)
-{
-	std::cout << this->_name << " attacks with his " \
-			<< this->_weapon.getType() << std::endl;
-}
-
-void	HumanA::setWeapon(Weapon &weapon)
-{
-	this->_weapon = weapon;
-}
+		void	attack(const std::string &target);
+		void	highFivesGuys(void);
+};

@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:07:48 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/23 22:40:17 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/25 17:09:42 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	replace(std::string str, char **av)
 	pos = 0;
 	while (1)
 	{
-		if (str.find(av[2], pos) == std::string::npos)
+		if (str.find(av[2], pos) == std::string::npos || av[2][0] == '\0')
 			break ;
 		else
 		{
@@ -41,7 +41,7 @@ int	replace(std::string str, char **av)
 		}
 	}
 	outfile << str;
-	
+	outfile.close();
 	return (0);
 }
 
@@ -67,5 +67,6 @@ int	main(int ac, char **av)
 	
 	str.resize(fsize);
 	infile.read(&str[0], fsize);
+	infile.close();
 	return (replace(str, av));
 }

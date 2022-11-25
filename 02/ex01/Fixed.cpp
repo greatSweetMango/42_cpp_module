@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:10:10 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/22 20:19:19 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/25 18:33:39 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed::Fixed(int const value)
 
 Fixed::Fixed(float const value)
 {
-	this->_value = roundf(value * (1 << this->_bit));// roundf사용불가??
+	this->_value = roundf(value * (1 << this->_bit));
 }
 
 Fixed::~Fixed(void)
