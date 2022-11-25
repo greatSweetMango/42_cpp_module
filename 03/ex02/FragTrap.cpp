@@ -6,15 +6,19 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:49:59 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 15:03:26 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:02:05 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap()
+	: ClapTrap()
 {
 	std::cout << "FragTrap: Default constructor called" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 }
 
 FragTrap::FragTrap(std::string name)
@@ -26,7 +30,7 @@ FragTrap::FragTrap(std::string name)
 	this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(FragTrap const &copy)
+FragTrap::FragTrap(const FragTrap &copy)
 {
 	std::cout << "FragTrap: copy constructor called" << std::endl;
 	*this = copy;
@@ -56,4 +60,17 @@ void	FragTrap::attack(const std::string &target)
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << this->_name << "Let's high five guys" << std::endl;
+}
+
+FragTrap	&FragTrap::operator=(const FragTrap &copy)
+{
+	std::cout << "ScavTrap assignment operator called" << std::endl;
+	if (this == &copy)
+		return (*this);
+	
+	this->_name = copy._name;
+	this->_hitPoints = copy._hitPoints;
+	this->_energyPoints = copy._energyPoints;
+	this->_attackDamage = copy._attackDamage;
+	return (*this);
 }

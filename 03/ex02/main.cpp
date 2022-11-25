@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:12:23 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 15:05:58 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/25 21:13:41 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(void)
 	}
 	std::cout << "---------------------------------------" << std::endl;
 	{
-		FragTrap	alfa("alfa(FragTrap)");
+		FragTrap	alfa("beta(FragTrap)");
 
 		alfa.highFivesGuys();
 		alfa.attack("skag");
