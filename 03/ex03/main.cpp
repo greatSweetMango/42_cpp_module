@@ -6,11 +6,13 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:12:23 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 22:07:36 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:19:58 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+
+#include <stdlib.h>
 
 int	main(void)
 {
@@ -41,8 +43,9 @@ int	main(void)
 		DiamondTrap	alfa("alfa");
 
 		alfa.beRepaired(49);
-		alfa.beRepaired(3); //모자람 //왜 안모자람??ㅁ???
+		alfa.beRepaired(3); //모자람
 		alfa.attack("skag"); //모자람
 	}
+	
 	return (0);
 }

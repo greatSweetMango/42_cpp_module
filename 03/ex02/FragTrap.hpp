@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:50:05 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:02:05 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:14:06 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class FragTrap : public ClapTrap
 		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(const FragTrap &copy);
-		~FragTrap();
+		virtual	~FragTrap();
 
-		void	attack(const std::string &target);
+		void	attack(const std::string& target);
 		void	highFivesGuys(void);
 
 		/* Operator overload */

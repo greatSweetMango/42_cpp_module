@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:49:59 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:01:53 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:06:36 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap: Destructor called" << std::endl;
 }
 
-void	ScavTrap::attack(const std::string &target)
+void	ScavTrap::attack(const std::string& target)
 {
 	if (this->_hitPoints == 0)
 		return ;
@@ -50,7 +50,7 @@ void	ScavTrap::attack(const std::string &target)
 		std::cout << this->_name << " has not enough energy to attack!" << std::endl;
 	else
 	{
-		std::cout << this->_name << " attacks "\
+		std::cout << "ScavTrap "<< this->_name << " attacks "\
 			<< target << ", caousing " << this->_attackDamage\
 			<< " points of damage!" << std::endl;
 		this->_energyPoints -= this->_attackDamage;
@@ -59,6 +59,8 @@ void	ScavTrap::attack(const std::string &target)
 
 void	ScavTrap::guardGate(void)
 {
+	if (this->_hitPoints == 0)
+		return ;
 	std::cout << this->_name << " is now in Gate keeper mode." << std::endl;
 }
 

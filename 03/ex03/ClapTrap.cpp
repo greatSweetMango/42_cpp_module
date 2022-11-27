@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:08:43 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:01:41 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/26 15:11:57 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,15 @@ void	ClapTrap::attack(const std::string& target)
 	if (this->_hitPoints == 0)
 		return ;
 
-	std::cout << this->_name << " attacks "\
-		<< target << ", caousing " << this->_attackDamage\
-		<< " points of damage!" << std::endl;
+	if (this->_energyPoints < this->_attackDamage)
+		std::cout << this->_name << " has not enough energy to attack!" << std::endl;
+	else
+	{
+		std::cout << "ClapTrap "<< this->_name << " attacks "\
+			<< target << ", caousing " << this->_attackDamage\
+			<< " points of damage!" << std::endl;
+		this->_energyPoints -= this->_attackDamage;
+	}
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -86,8 +92,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->_name << " has not enough energy to repair!" << std::endl;
 	else
 	{
-		std::cout << this->_name << " be repaired by "\
-			<< amount << " points!" << std::endl;
 		this->_energyPoints -= amount;
+		std::cout << this->_name << " be repaired by "\
+			<< amount << " points!" << " envergy remain "<< this->_energyPoints << std::endl;
 	}
 }

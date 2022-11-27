@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:07:44 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:01:41 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:12:47 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
-		~ClapTrap();
+		virtual	~ClapTrap();
 
-		void	attack(const std::string& target);
+		virtual	void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);	
 		void	beRepaired(unsigned int amount);
 		/* Operator Overloads */

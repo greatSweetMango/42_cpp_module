@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:07:48 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 17:09:42 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/26 20:16:21 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ int	main(int ac, char **av)
 	
 	str.resize(fsize);
 	infile.read(&str[0], fsize);
+	if (infile)
+      std::cout << "all characters read successfully.";
+    else
+      std::cout << "error: only " << infile.gcount() << " could be read";
 	infile.close();
 	return (replace(str, av));
 }

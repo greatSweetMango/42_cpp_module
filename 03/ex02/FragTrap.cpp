@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:49:59 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:02:05 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:09:46 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap: Destructor called" << std::endl;
 }
 
-void	FragTrap::attack(const std::string &target)
+void	FragTrap::attack(const std::string& target)
 {
 	if (this->_hitPoints == 0)
 		return ;
@@ -50,7 +50,7 @@ void	FragTrap::attack(const std::string &target)
 		std::cout << this->_name << " has not enough energy to attack!" << std::endl;
 	else
 	{
-		std::cout << this->_name << " attacks "\
+		std::cout << "FragTrap "<< this->_name << " attacks "\
 			<< target << ", caousing " << this->_attackDamage\
 			<< " points of damage!" << std::endl;
 		this->_energyPoints -= this->_attackDamage;
@@ -59,12 +59,12 @@ void	FragTrap::attack(const std::string &target)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << this->_name << "Let's high five guys" << std::endl;
+	std::cout << this->_name << "Let's high five guys!" << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &copy)
 {
-	std::cout << "ScavTrap assignment operator called" << std::endl;
+	std::cout << "FragTrap assignment operator called" << std::endl;
 	if (this == &copy)
 		return (*this);
 	

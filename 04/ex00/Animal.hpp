@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 20:50:05 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/27 16:13:41 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/11/26 14:14:52 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/11/26 14:24:03 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-class ScavTrap : public ClapTrap
+#include <string>
+
+class Animal
 {
-	private:
-		
+	protected:
+		std::string	_type;
 	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &copy);
-		virtual	~ScavTrap();
-		
-		void	attack(const std::string& target);
-		void	guardGate();
+		Animal();
+		Animal(const std::string type);
+		Animal(const Animal	&copy);
+		~Animal();
 
-		/* Operator overloads*/
-		ScavTrap	&operator=(const ScavTrap &copy);
-};
+		/* Operator overloads */
+		Animal	&operator=(const Animal &copy);
+		void	makeSound(void);
+}

@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:50:05 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:31:30 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:14:22 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap : public virtual ClapTrap
 		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(const FragTrap &copy);
-		~FragTrap();
+		virtual	~FragTrap();
 
 		void	attack(const std::string &target);
 		void	highFivesGuys(void);
