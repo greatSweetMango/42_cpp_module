@@ -6,9 +6,11 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 20:50:05 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/27 16:14:22 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:25:19 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include "ClapTrap.hpp"
 

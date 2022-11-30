@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:08:43 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/25 21:01:41 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:40:14 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		std::cout << this->_name << " be repaired by "\
 			<< amount << " points!" << std::endl;
+		this->_hitPoints += amount;
 		this->_energyPoints -= amount;
 	}
 }

@@ -6,9 +6,11 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 18:41:29 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/27 16:14:20 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 16:25:13 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"

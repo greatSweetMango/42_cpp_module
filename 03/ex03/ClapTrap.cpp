@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 19:08:43 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/26 15:11:57 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/11/27 19:40:38 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << this->_name << " has not enough energy to repair!" << std::endl;
 	else
 	{
+		this->_hitPoints += amount;
 		this->_energyPoints -= amount;
 		std::cout << this->_name << " be repaired by "\
 			<< amount << " points!" << " envergy remain "<< this->_energyPoints << std::endl;
