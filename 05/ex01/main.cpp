@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:04:16 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/30 22:34:36 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:11:37 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 
 
@@ -56,9 +55,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -73,9 +71,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
-		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
+		std::cout << e.what() << std::endl;
+		std::cout << "--------FAIL----------\n" << std::endl;;
 	}
 
 	/*singForm() TEST*/
@@ -92,9 +89,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 
 
@@ -111,9 +107,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -128,9 +123,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 	
 	/* Copy Test */
@@ -149,9 +143,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 	/* Assignment Test */
 	try
@@ -169,9 +162,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
+		std::cout << e.what() << std::endl;
 		std::cout << "--------FAIL----------\n" << std::endl;
-		//std::cout << e.what() << std::endl;
 	}
 
 	/* Construct Test */
@@ -182,9 +174,8 @@ int	main(void)
 	}
 	catch (const std::exception &e)
 	{
-		e.what();
-		std::cout << "--------FAIL----------\n" << std::endl;
 		std::cout << e.what() << std::endl;
+		std::cout << "--------FAIL----------\n" << std::endl;
 	}
 	return (0);
 }

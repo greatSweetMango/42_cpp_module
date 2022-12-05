@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:04:23 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/11/30 22:35:44 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/12/04 13:32:25 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,23 +74,11 @@ void	Bureaucrat::setDecreaseGrade(void)
 
 void	Bureaucrat::signForm(Form &f)
 {
-	if (this->getGrade() > f.getGradeToSign() && this->getGrade() > f.getGradeToExecute())
-	{
-		std::cout << this->_name << " couldn’t sign " << f.getName()\
-			<< " because ";
-		throw Form::GradeTooLowException(3);
-	}
-	else if (this->getGrade() > f.getGradeToSign())
+	if (this->getGrade() > f.getGradeToSign())
 	{
 		std::cout << this->_name << " couldn’t sign " << f.getName()\
 			<< " because ";
 		throw Form::GradeTooLowException(1);
-	}
-	else if (this->getGrade() > f.getGradeToExecute())
-	{
-		std::cout << this->_name << " couldn’t sign " << f.getName()\
-			<< " because ";
-		throw Form::GradeTooLowException(2);
 	}
 	f.setIsSigned(true);
 	std::cout << this->getName() << " signed " << f.getName() << std::endl;

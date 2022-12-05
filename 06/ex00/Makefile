@@ -6,18 +6,15 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/12/02 20:10:23 by jaehyuki         ###   ########.fr        #
+#    Updated: 2022/12/04 20:37:20 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= 28b
+NAME		= conversion
 
-SRCS		= main.cpp						\
-				Bureaucrat.cpp				\
-				AForm.cpp					\
-				PresidentialPardonForm.cpp	\
-				RobotomyRequestForm.cpp		\
-				ShrubberyCreationForm.cpp
+SRCS		= main.cpp	\
+				Convertor.cpp	
+
 CC			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
 RM			= rm -rf
