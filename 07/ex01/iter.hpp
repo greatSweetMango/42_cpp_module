@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convertor.hpp                                      :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 20:15:42 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/12/05 23:11:47 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/12/06 15:15:08 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/12/08 21:02:43 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <string>
-#include <limits>
+#include <cctype>
 #include <iostream>
-#include <cmath>
 
-class Convertor
+template <typename T>
+void	iter(T *arr, size_t size, void (*f)(const T&))
 {
-	private:
-		std::string _input;
-	public:
-		Convertor();
-		Convertor(const char *str);
-		Convertor(const Convertor &copy);
-		~Convertor();
+	if (!arr || !size || !f)
+		return ;
+	for (size_t i = 0; i < size; i++)
+	{
+		f(arr[i]);
+	}
+}
 
-		/* Member functions */
-		void	print2Char(void) const;
-		void	print2Int(void) const;
-		void	print2Float(void) const;
-		void	print2Double(void) const;
-		void	print2AllType(void) const;
-
-		/* Operator Overloads */
-		Convertor	&operator=(const Convertor &src);
-};
+template <typename T>
+void	iter(T *arr, size_t size, void (*f)(T&))
+{
+	if (!arr || !size || !f)
+		return ;
+	for (size_t i = 0; i < size; i++)
+	{
+		f(arr[i]);
+	}
+}

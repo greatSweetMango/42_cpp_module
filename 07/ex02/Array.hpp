@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Convertor.hpp                                      :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/04 20:15:42 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/12/05 23:11:47 by jaehyuki         ###   ########.fr       */
+/*   Created: 2022/12/06 18:07:24 by jaehyuki          #+#    #+#             */
+/*   Updated: 2022/12/06 19:17:13 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <string>
-#include <limits>
 #include <iostream>
-#include <cmath>
 
-class Convertor
+template <typename T>
+class Array
 {
 	private:
-		std::string _input;
+		T		*_arr;
+		size_t	_size;
 	public:
-		Convertor();
-		Convertor(const char *str);
-		Convertor(const Convertor &copy);
-		~Convertor();
-
+		Array();
+		Array(size_t size);
+		Array(const Array &copy);
+		~Array();
+		
 		/* Member functions */
-		void	print2Char(void) const;
-		void	print2Int(void) const;
-		void	print2Float(void) const;
-		void	print2Double(void) const;
-		void	print2AllType(void) const;
+		size_t	size(void) const;
 
-		/* Operator Overloads */
-		Convertor	&operator=(const Convertor &src);
+		/* Exception class */
+		class OutOfArrayException : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+
+		/* Operator overloads */
+		Array	&operator=(const Array &src);
+		T	&operator[](size_t index);
 };
+
+
+#include "Array.tpp"

@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 20:20:51 by jaehyuki          #+#    #+#             */
-/*   Updated: 2022/12/05 16:54:56 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:35:16 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	Convertor::print2Char(void) const
 		std::cout << "char: ";
 		int num;
 		if (this->_input[1] == '\0' && !std::isdigit(this->_input[0]))
-			num = this->_input[0];
+			num = static_cast<int>(this->_input[0]);
 		else
 			num = std::stoi(this->_input);
 
@@ -47,7 +47,7 @@ void	Convertor::print2Char(void) const
 		else if (!isprint(num))
 			std::cout << "Non displayable" << std::endl;
 		else
-			std::cout << (char)num << std::endl;
+			std::cout << static_cast<char>(num) << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -64,7 +64,11 @@ void	Convertor::print2Int(void) const
 	try
 	{
 		std::cout << "int: ";
-		int num = std::stoi(this->_input);
+		int num;
+		if (!isdigit(this->_input[0]) && this->_input[1] == '\0')
+			num = static_cast<int>(this->_input[0]);
+		else
+			num = std::stoi(this->_input);
 		
 		std::cout << num << std::endl;
 	}
@@ -82,9 +86,16 @@ void	Convertor::print2Float(void) const
 	try
 	{
 		std::cout << "float: ";
-		float num = std::stof(this->_input);
+		float num;
+		if (!isdigit(this->_input[0]) && this->_input[1] == '\0')
+			num = static_cast<float>(this->_input[0]);
+		else
+			num = std::stof(this->_input);
 		
-		std::cout << num << "f" << std::endl;
+		if (static_cast<int>(num) == num && std::abs(num) < 1000000)
+			std::cout << num << ".0f" << std::endl;
+		else
+			std::cout << num << "f" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
@@ -108,9 +119,16 @@ void	Convertor::print2Double(void) const
 	try
 	{
 		std::cout << "double: ";
-		double num = std::stod(this->_input);
-		
-		std::cout << num << std::endl;
+		double	num;
+		if (!isdigit(this->_input[0]) && this->_input[1] == '\0')
+			num = static_cast<double>(this->_input[0]);
+		else
+			num = std::stod(this->_input);
+			
+		if (static_cast<int>(num) == num && std::abs(num) < 1000000)
+			std::cout << num << ".0" << std::endl;
+		else
+			std::cout << num << std::endl;
 	}
 	catch(const std::exception& e)
 	{
