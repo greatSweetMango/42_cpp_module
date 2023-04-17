@@ -6,16 +6,17 @@
 #    By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/05 16:17:34 by jaehyuki          #+#    #+#              #
-#    Updated: 2022/12/07 22:38:23 by jaehyuki         ###   ########.fr        #
+#    Updated: 2023/04/17 19:08:30 by jaehyuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= easyFind
+NAME		= btc
 
-SRCS		= main.cpp	
+SRCS		= main.cpp	\
+				BitcoinExchange.cpp
 
 CC			= c++
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic #-g3 -fsanitize=address
 RM			= rm -rf
 				
 OBJS		= $(SRCS:.cpp=.o)
@@ -34,6 +35,8 @@ clean	:
 fclean	: clean
 	$(RM) $(NAME)
 
-re: fclean all
+re:
+	make fclean
+	make all
 
 .PHONY: all clean fclean re
