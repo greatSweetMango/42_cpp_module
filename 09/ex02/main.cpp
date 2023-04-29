@@ -6,7 +6,7 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 14:50:07 by jaehyuki          #+#    #+#             */
-/*   Updated: 2023/04/19 15:31:24 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2023/04/30 04:45:34 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int main(int argc, char **argv)
     try
     {
         PmergeMe pmergeMe(argv);
+        pmergeMe.printResult();
     }
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
-    
     return (0);
 }
