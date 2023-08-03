@@ -6,11 +6,15 @@
 /*   By: jaehyuki <jaehyuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 17:57:39 by jaehyuki          #+#    #+#             */
-/*   Updated: 2023/04/17 18:58:21 by jaehyuki         ###   ########.fr       */
+/*   Updated: 2023/04/19 12:13:41 by jaehyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+BitcoinExchange::BitcoinExchange()
+{
+}
 
 BitcoinExchange::BitcoinExchange(std::string filePath)
 {
@@ -52,7 +56,7 @@ BitcoinExchange::BitcoinExchange(std::string filePath)
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
 {
-    (void)src;
+    *this = src;
 }
 
 BitcoinExchange::~BitcoinExchange(void)
@@ -61,8 +65,9 @@ BitcoinExchange::~BitcoinExchange(void)
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &src)
 {
-    (void)src;
-    return (*this);
+    if (this == &src)
+		return (*this);
+	return (*this);
 }
 
 double    BitcoinExchange::exchangeCoin(std::string dateString, double coin)
